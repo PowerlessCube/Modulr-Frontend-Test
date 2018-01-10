@@ -7,7 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
   transform(account: any, searchQuery: string, searchCriteria: any) {
     if (searchQuery) {
-      console.log(searchQuery);
       searchQuery = searchQuery.toLowerCase();
       return account.filter((el: any) => {
         let isTrue = false;

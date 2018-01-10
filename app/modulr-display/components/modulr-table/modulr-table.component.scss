@@ -1,3 +1,55 @@
-.modulr-table {
+.Table {
+  $light-color: #ffffff;
+  $pebble-light: lighten(#5C686D, 50%);
+  $wave: #3EA7DD;
+  $md: 500px;
 
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin: 1rem 0;
+  line-height: 1.5;
+
+  // .Table-header
+  &-header {
+    display: none;
+    @media (min-width: $md) {
+      font-weight: 700;
+      background-color: $pebble-light;
+      border-bottom: 2px solid $wave;
+    }
+  }
+  // .Table-row
+  &-row {
+    width: 100%;
+     @media (min-width: $md) {
+      display: flex;
+      flex-flow: row nowrap;
+      border-bottom: 2px solid $pebble-light;
+    }
+    // .Table-row-item
+    &-item {
+      display: flex;
+      flex-flow: row nowrap;
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 0.5em;
+      word-break: break-word;
+      &:before {
+        content: attr(data-header);
+        width: 30%;
+        font-weight: 700;
+      }
+      @media (min-width: $md) {
+        &:before { content: none; }
+      }
+    }
+  }
 }
+
+.u-Flex-grow3 {
+  flex-grow: 3;
+}
+
+

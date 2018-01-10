@@ -4,20 +4,22 @@ import { Component, Input } from '@angular/core';
   selector: 'modulr-table',
   styleUrls: ['modulr-table.component.scss'],
   template: `
-    <table>
-      <tr>
-        <th>Account ID</th>
-        <th>Account Name</th>
-        <th>Account Number</th>
-        <th>Sort code</th>
-        <th>Balance</th>
-      </tr>
-      <tr *ngFor="let account of accounts">
-        <td>{{ account.id }}</td>
-        <td>{{ account.name }}</td>
-        <td>{{ account.balance | currency: account.currency:true }}</td>
-      </tr>
-    </table>
+    <div class="Table">
+      <div class="Table-row Table-header">
+        <div class="Table-row-item" data-header="AccountId">Account ID</div>
+        <div class="Table-row-item u-Flex-grow3" data-header="AccountName">Account Name</div>
+        <div class="Table-row-item" data-header="AccountNumber">Account Number</div>
+        <div class="Table-row-item" data-header="SortCode">Sort code</div>
+        <div class="Table-row-item" data-header="Balance">Balance</div>
+      </div>
+      <div class="Table-row" *ngFor="let account of accounts">
+        <div class="Table-row-item" data-header="AccountId">{{ account.id }}</div>
+        <div class="Table-row-item u-Flex-grow3" data-header="AccountName">{{ account.name }}</div>
+        <div class="Table-row-item" data-header="AccountNumber">12345050</div>
+        <div class="Table-row-item" data-header="Balance">{{ account.balance | currency: account.currency:true }}</div>
+        <div class="Table-row-item" data-header="SortCode">00-00-00</div>
+      </div>
+    </div>
   `
 })
 

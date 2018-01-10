@@ -1,3 +1,18 @@
-.modulr-search {
+.modulr-search_container {
+  align-content: stretch;
+  border: solid 2px lighten(#5C686D, 50%);
+  border-radius: 5px;
+  display: flex;
+  height: 60px
+}
 
+.modulr-search_button {
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.modulr-search_input {
+  align-self: stretch;
+  border: none;
+  flex-grow: 10;
 }
