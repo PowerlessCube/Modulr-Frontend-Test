@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { FilterPipe } from './pipe/search-filter.pipe';
+
 import { ModulrSearchComponent } from './components/modulr-search/modulr-search.component';
 import { ModulrTableComponent } from './components/modulr-table/modulr-table.component';
 
@@ -14,7 +16,8 @@ import { AccountService } from './services/account.service';
   declarations: [
     ModulrDisplayContainer,
     ModulrSearchComponent,
-    ModulrTableComponent
+    ModulrTableComponent,
+    FilterPipe,
   ],
   providers: [
     AccountService

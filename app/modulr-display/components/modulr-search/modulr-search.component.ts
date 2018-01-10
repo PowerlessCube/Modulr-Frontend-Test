@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'modulr-search',
@@ -6,13 +6,25 @@ import { Component } from '@angular/core';
   template: `
     <div>
       <input
-        type="text">
+        type="text"
+        #searchQuery
+        (keyup.enter)="handleSearch(searchQuery.value)"
+        >
       <button
-        type="button">
+        type="button"
+        (click)="handleSearch(searchQuery.value)">
         Submit
       </button>
     </div>
   `
 })
 
-export class ModulrSearchComponent {}
+export class ModulrSearchComponent {
+
+  @Output()
+  search: EventEmitter<any> = new EventEmitter();
+
+  handleSearch(value: string) {
+    this.search.emit(value);
+  }
+}
