@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { FilterPipe } from './pipe/search-filter.pipe';
+import { SortCodePipe } from './pipe/sort-code.pipe';
 
 import { ModulrSearchComponent } from './components/modulr-search/modulr-search.component';
 import { ModulrTableComponent } from './components/modulr-table/modulr-table.component';
@@ -18,6 +19,7 @@ import { AccountService } from './services/account.service';
     ModulrSearchComponent,
     ModulrTableComponent,
     FilterPipe,
+    SortCodePipe,
   ],
   providers: [
     AccountService
