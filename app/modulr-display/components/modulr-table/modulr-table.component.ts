@@ -15,9 +15,9 @@ import { Component, Input } from '@angular/core';
       <div class="Table-row" *ngFor="let account of accounts">
         <div class="Table-row-item" data-header="AccountId">{{ account.id }}</div>
         <div class="Table-row-item u-Flex-grow3" data-header="AccountName">{{ account.name }}</div>
-        <div class="Table-row-item" data-header="AccountNumber">12345050</div>
+        <div class="Table-row-item" data-header="AccountNumber">{{account.identifiers[0]['accountNumber']}}</div>
+        <div class="Table-row-item" data-header="SortCode">{{account.identifiers[0]['sortCode']}}</div>
         <div class="Table-row-item" data-header="Balance">{{ account.balance | currency: account.currency:true }}</div>
-        <div class="Table-row-item" data-header="SortCode">00-00-00</div>
       </div>
     </div>
   `
