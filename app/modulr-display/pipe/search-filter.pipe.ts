@@ -5,21 +5,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class FilterPipe implements PipeTransform {
-  transform(account: any, searchQuery: string, searchCriteria: any) {
+  transform(accounts: Account[], searchQuery: string, searchCriteria: string[]) {
     if (searchQuery) {
       searchQuery = searchQuery.toLowerCase();
-      return account.filter((el: any) => {
+      return accounts.filter((account: Account) => {
         let isTrue = false;
         for (const k in searchCriteria) {
-          if (el[searchCriteria[k]].toLowerCase().indexOf(searchQuery) > -1) {
+          if (account[searchCriteria[k]].toLowerCase().indexOf(searchQuery) > -1) {
             isTrue = true;
           }
           if (isTrue) {
-            return el
+            return account
           }
         }
       })
     }
-    return account;
   }
 }
