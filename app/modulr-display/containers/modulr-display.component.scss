@@ -1,3 +1,10 @@
-.modulr-display{
-    
+.modulr-display_container{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modulr-display_button {
+  padding: 10px 15px;
+  border-radius: 3px;
 }

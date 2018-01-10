@@ -10,14 +10,16 @@ import  { Account, Identifier } from '../models/account.interface';
   selector: 'modulr-display',
   styleUrls: ['modulr-display.component.scss'],
   template: `
-    <div>
+    <div class="modulr-display_container">
       <modulr-search
+        class="modulr-display_searchbar"
         (search)="handleSearch($event)">
       </modulr-search>
-      <modulr-table
-        [accounts]="accounts | FilterPipe: searchQuery : searchCriteria">
-      </modulr-table>
+      <button class="modulr-display_button">Create new customer</button>
     </div>
+    <modulr-table
+      [accounts]="accounts | FilterPipe: searchQuery : searchCriteria">
+    </modulr-table>
   `
 })
 
